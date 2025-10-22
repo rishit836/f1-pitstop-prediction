@@ -163,11 +163,30 @@ The notebook includes a quick scatter to show `did_pit` vs. `SpeedST` bucketed o
 - GPU not used: the current model is small and CPU is fine; for larger models, move tensors and model to CUDA if available.
 
 
+## Contributing
+
+Contributions are welcome—whether it's fixing a bug, improving docs, or proposing new features and features/experiments.
+
+How to contribute:
+
+1. Fork the repository and create a feature branch:
+  - `git checkout -b feat/your-feature` (or `fix/your-bug`)
+2. Set up a virtual environment and install dependencies:
+  - `python -m venv .venv` then activate and `pip install -r requirements.txt`
+3. Run `main.ipynb` end-to-end to validate your changes (data paths under `data/` should remain consistent).
+4. Keep changes focused and documented (update README or add markdown cells in the notebook when behavior changes).
+5. Open a Pull Request describing:
+  - What changed and why
+  - Any assumptions, data requirements, or limitations
+  - Optional: screenshots/plots for results or visualizations
+
+Suggestions:
+
+- Use clear commit messages (Conventional Commits style is appreciated but not required).
+- For new features touching data processing, prefer writing outputs to `data/processed/` and keep raw inputs under `data/laps/`, `data/weather/`, and `data/result/`.
+- If proposing bigger design changes, please open an issue first to discuss.
+
+
 ## Acknowledgments
 
 - Data access and APIs by [FastF1](https://theoehrly.github.io/Fast-F1/). Please review their documentation and usage guidelines.
-
-
-## License
-
-This repository has no explicit license file. Add a license (e.g., MIT) if you plan to publish or share.
