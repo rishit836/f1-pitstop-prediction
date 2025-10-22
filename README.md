@@ -109,6 +109,16 @@ Open `main.ipynb` and run the cells in order. The notebook performs these steps:
 Evaluation prints prediction errors and a simple accuracy percentage. Consider using scikit-learn metrics (precision/recall/F1, ROC-AUC) for a fuller view.
 
 
+## Results
+
+- Unbiased model (balanced 50/50 Pit vs No-Pit): **76% accuracy**
+- Slightly biased toward No-Pit (reflecting real-world class skew): **87% accuracy**
+
+Notes:
+- Accuracy alone can be misleading for imbalanced data. Consider tracking precision/recall/F1 for the Pit class and ROC-AUC.
+- Re-run metrics if you change drivers, years, or feature encoding, as results will vary.
+
+
 ## Example visualization
 
 The notebook includes a quick scatter to show `did_pit` vs. `SpeedST` bucketed on the x-axis for a visual sense of separation.
@@ -145,6 +155,14 @@ The notebook includes a quick scatter to show `did_pit` vs. `SpeedST` bucketed o
 - Hyperparameter tuning with cross-validation.
 - Model interpretability: feature importance, permutation importance, SHAP.
 - Calibrate probabilities and evaluate cost-sensitive metrics.
+
+
+## Roadmap
+
+- Sequence modeling: train an LSTM that ingests lap sequences since pit decisions depend on context across laps.
+- Weather context windows: include weather features for ±5 minutes around pit events.
+- Broader driver coverage: expand beyond the winning driver; train and evaluate across multiple drivers for both LR and LSTM.
+- Deeper neural nets: prototype a multi-layer neural network (MLP) as an additional baseline.
 
 
 ## Reproducibility checklist
